@@ -1,0 +1,65 @@
+﻿{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "Debug Stock",
+                               "type":  "node",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/Stock/server.js",
+                               "cwd":  "${workspaceFolder}",
+                               "envFile":  "${workspaceFolder}/.env",
+                               "console":  "integratedTerminal",
+                               "skipFiles":  [
+                                                 "\u003cnode_internals\u003e/**"
+                                             ]
+                           },
+                           {
+                               "name":  "Debug Orchestrator",
+                               "type":  "node",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/Orchestrator/server.js",
+                               "cwd":  "${workspaceFolder}",
+                               "envFile":  "${workspaceFolder}/.env",
+                               "console":  "integratedTerminal",
+                               "skipFiles":  [
+                                                 "\u003cnode_internals\u003e/**"
+                                             ]
+                           },
+                           {
+                               "name":  "Debug Order",
+                               "type":  "node",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/Order/server.js",
+                               "cwd":  "${workspaceFolder}",
+                               "envFile":  "${workspaceFolder}/.env",
+                               "console":  "integratedTerminal",
+                               "skipFiles":  [
+                                                 "\u003cnode_internals\u003e/**"
+                                             ]
+                           },
+                           {
+                               "name":  "Debug Notification",
+                               "type":  "node",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/Notification/server.js",
+                               "cwd":  "${workspaceFolder}",
+                               "envFile":  "${workspaceFolder}/.env",
+                               "console":  "integratedTerminal",
+                               "skipFiles":  [
+                                                 "\u003cnode_internals\u003e/**"
+                                             ]
+                           }
+                       ],
+    "compounds":  [
+                      {
+                          "name":  "Debug Microservices",
+                          "configurations":  [
+                                                 "Debug Stock",
+                                                 "Debug Orchestrator",
+                                                 "Debug Order",
+                                                 "Debug Notification"
+                                             ],
+                          "stopAll":  true
+                      }
+                  ]
+}
